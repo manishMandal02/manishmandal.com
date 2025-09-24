@@ -9,9 +9,9 @@ const DownloadUrl =
 
 const Resume = () => {
   return (
-    <main className='w-screen h-screen overflow-hidden bg-slate-200 dark:bg-primaryDarkBG'>
+    <main className='w-screen h-screen pt-10 overflow-hidden bg-slate-200 dark:bg-primaryDarkBG'>
       <Navbar />
-      <section className='size-full pt-4 pl-60 flex items-center'>
+      <section className='size-full pl-72 flex items-center'>
         <iframe className='w-full h-full' src={EmbedUrl}></iframe>
       </section>
       <a

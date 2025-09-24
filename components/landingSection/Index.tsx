@@ -1,6 +1,6 @@
 import { motion, useAnimation } from 'framer-motion';
 import Image from 'next/image';
-import { MdInsertDriveFile } from 'react-icons/md';
+import { MdInsertDriveFile, MdVideocam } from 'react-icons/md';
 
 import { emailContainerVariant } from '../../src/animations/landingSection';
 
@@ -39,12 +39,12 @@ const HeroSection = () => {
   return (
     <div className='flex w-screen -mt-12 ms:mt-12 h-screen ms: relative'>
       {/* Left container */}
-      <div className='flex flex-col w-1/2 ms:w-full items-start justify-center py-12 ms:py-8 mt-12 ms:-mt-16 ml-52 ms:ml-4 relative'>
+      <div className='flex flex-col w-1/2 ms:w-full items-start justify-center py-12 ms:py-8 mt-12 ms:-mt-16 ml-48 ms:ml-4 relative overflow-visible'>
         <MainTitle controls={titleControls} />
         <Subtitle controls={subTitleControls} />
         {/* Email */}
         <motion.div
-          className=' ms:hidden flex'
+          className='ms:hidden flex items-end justify-start gap-x-4 w-[120%] -mt-2.5'
           variants={emailContainerVariant}
           initial='initial'
           animate='animate'
@@ -52,11 +52,18 @@ const HeroSection = () => {
           <MyEmail />
           <Link
             href={'/resume'}
-            target='_black'
-            className='flex items-center justify-center text-slate-700/90 dark:text-slate-200/90 border-2 border-slate-500/90 dark:border-slate-200 px-4 h-12 rounded-md mt-[4.2rem] ml-6 group'
+            className='flex items-center justify-center text-slate-700/90 dark:text-slate-200/90 border-2 border-slate-500/90 dark:border-slate-300/90 px-4 h-12 rounded-md '
           >
             <MdInsertDriveFile className='mr-1.5 text-slate-gray-500 dark:text-gray-300' />
             My Resume
+          </Link>
+
+          <Link
+            href={'/intro-video'}
+            className='flex items-center justify-center text-slate-700/90 dark:text-slate-200/90 border-2 border-slate-500/90 dark:border-slate-300/90 px-4 h-12 rounded-md'
+          >
+            <MdVideocam className='mr-1.5 text-slate-gray-500 dark:text-gray-300' />
+            Intro Video
           </Link>
         </motion.div>
         {/* Scroll Down */}

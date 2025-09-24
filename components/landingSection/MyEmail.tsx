@@ -27,7 +27,7 @@ const MyEmail: React.FC<Props> = ({ customAnimation }) => {
   return (
     <>
       <motion.div
-        className='w-[24rem] mb-2 ms:w-82 relative group flex justify-between items-center mt-16 ms:mt-12 border-2 border-primary dark:border-primary-dark  cursor-pointer rounded-md overflow-hidden border-collapse  shadow-primary  shadow-sm '
+        className='w-[24rem] ms:w-82 relative group flex justify-between items-center mt-16 ms:mt-12 border-2 border-primary dark:border-primary-dark  cursor-pointer rounded-md overflow-hidden border-collapse  shadow-primary  shadow-sm '
         onClick={copyEmailHandler}
         variants={customAnimation ? undefined : emailContainerVariant}
         initial='initial'
