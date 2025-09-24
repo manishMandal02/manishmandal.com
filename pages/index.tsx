@@ -12,7 +12,6 @@ import MyProjects from '../components/myProjects/index';
 import ContactMe from '../components/contactMe/Index';
 import AboutMe from '../components/aboutMe/Index';
 import Blog from '../components/blog';
-import { useState } from 'react';
 import { NextSeo } from 'next-seo';
 
 export default function Home() {
@@ -21,7 +20,7 @@ export default function Home() {
   }
 
   return (
-    <div className=' flex flex-col min-h-screen dark:bg-primaryDarkBG overflow-x-hidden transition-all duration-400 '>
+    <main className='flex flex-col min-h-screen dark:bg-primaryDarkBG overflow-x-hidden transition-all duration-400 '>
       <Head>
         <title>Manish Mandal</title>
         <link rel='icon' href='/favicon.ico' />
@@ -41,40 +40,41 @@ export default function Home() {
         defaultTitle='Manish Mandal'
         description='A FullStack web developer, Experienced in using JavaScript and its ecosystem, namely React & NodeJs to develop web applications.'
         canonical='https://manishmandal.com'
-        openGraph={{
-          url: 'https://manishmandal.com',
-          title: 'Manish Mandal',
-          description:
-            'FullStack Web Developer,  Experienced in using JavaScript and its ecosystem, namely React & NodeJs to develop web applications.',
-          images: [
-            {
-              url: 'https://manishmandal.com/manish-mandal-web.jpg',
-              width: 1650,
-              height: 850,
-              alt: 'Manish Mandal'
-            }
-            // {
-            //   url: '/manish-mandal-web.jpg',
-            //   width: 800,
-            //   height: 420,
-            //   alt: 'Manish Mandal',
-            // },
-          ],
-          site_name: 'Manish Mandal'
-        }}
+        openGraph={OpenGraphData}
         twitter={{
           handle: '@manishMandalJ',
           site: '@manishMandalJ',
           cardType: 'summary_large_image'
         }}
       />
-      ;
       <Navbar />
       <HeroSection />
       <AboutMe />
       <MyProjects />
-      <Blog />
+      {/* <Blog /> */}
       <ContactMe />
-    </div>
+    </main>
   );
 }
+
+const OpenGraphData = {
+  url: 'https://manishmandal.com',
+  title: 'Manish Mandal',
+  description:
+    'FullStack Web Developer,  Experienced in using JavaScript and its ecosystem, namely React & NodeJs to develop web applications.',
+  images: [
+    {
+      url: 'https://manishmandal.com/manish-mandal-web.jpg',
+      width: 1650,
+      height: 850,
+      alt: 'Manish Mandal'
+    }
+    // {
+    //   url: '/manish-mandal-web.jpg',
+    //   width: 800,
+    //   height: 420,
+    //   alt: 'Manish Mandal',
+    // },
+  ],
+  site_name: 'Manish Mandal'
+};

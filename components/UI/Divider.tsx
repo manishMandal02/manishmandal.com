@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import quotes from '../../src/assets/data/quotes.json';
 
 interface Props {
@@ -14,9 +14,9 @@ const Divider: React.FC<Props> = ({
   marginTop,
   marginBottom,
   marginBottomMobile,
-  marginTopMobile,
+  marginTopMobile
 }) => {
-  const quote = quotes[quoteNum - 1];
+  const quote = useMemo(() => quotes[quoteNum - 1], [quoteNum]);
   return (
     <div
       className={`mt-${marginTop} ms:mt-${marginTopMobile} mb-${marginBottom} ms:mb-${marginBottomMobile} h-44  ms:h-28 flex flex-col items-center justify-center`}

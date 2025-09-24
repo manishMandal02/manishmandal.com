@@ -1,24 +1,38 @@
 import Image from 'next/image';
-import Link from 'next/link';
-import React from 'react';
+import { useRouter } from 'next/router';
+import React, { useCallback } from 'react';
 import scrollTo from '../../src/utils/scrollTo';
 import SocialLinks from './SocialLinks';
 import ThemeToggleSwitch from './ThemeToggleSwitch';
+import { wait } from '../../src/utils/wait';
 
 // import logo from '/m-logo.svg';
 
 const Navbar = () => {
-  const goToAboutMe = () => {
-    scrollTo('about-me');
-  };
+  const router = useRouter();
 
-  const goToProjects = () => {
-    scrollTo('projects');
-  };
+  const gotTo = useCallback(async (section: string) => {
+    if (location.pathname !== '/') {
+      router.push('/', null, { scroll: true });
+      setTimeout(() => {
+        scrollTo(section);
+      }, 2200);
+      return;
+    }
+    scrollTo(section);
+  }, []);
 
-  const goToContact = () => {
-    scrollTo('contact');
-  };
+  const goToAboutMe = useCallback(() => {
+    gotTo('about-me');
+  }, [gotTo]);
+
+  const goToProjects = useCallback(() => {
+    gotTo('projects');
+  }, [gotTo]);
+
+  const goToContact = useCallback(() => {
+    gotTo('contact');
+  }, [gotTo]);
 
   const blogLink = 'https://blog.manishmandal.com';
 
@@ -28,8 +42,8 @@ const Navbar = () => {
         <Image
           src={'/m-logo.svg'}
           className='cursor-pointer'
-          width={60}
-          height={60}
+          width={50}
+          height={50}
           alt='manish-mandal'
           priority
         />
@@ -46,13 +60,13 @@ const Navbar = () => {
           >
             Projects
           </p>
-          <a
+          {/* <a
             href={blogLink}
             target='_blank'
             className=' cursor-pointer ml-5 text-lg appearance-none hover:text-black  dark:hover:text-slate-100'
           >
             Blog
-          </a>
+          </a> */}
           <p
             onClick={goToContact}
             className=' cursor-pointer ml-5 text-lg hover:text-black dark:hover:text-slate-100  '

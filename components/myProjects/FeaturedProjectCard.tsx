@@ -24,7 +24,7 @@ const FeaturedProjectCard: React.FC<Props> = ({
   tags,
   tech,
   isFlipped,
-  image,
+  image
 }) => {
   return (
     <div
@@ -58,34 +58,39 @@ const FeaturedProjectCard: React.FC<Props> = ({
           isFlipped ? '-mr-12' : '-ml-12'
         } ms:items-start ms:mr-0 ms:ml-0 ms:mt-2 ms:px-3 ms:relative`}
       >
-        <p className='text-slate-700 dark:text-gray-300 font- text-2xl tracking-wide'>{title}</p>
-        <p className='text-gray-600 dark:text-gray-400 font-extralight ms:text-base mt-px'>{subTitle}</p>
+        <p className='text-slate-700 dark:text-gray-200/90 font- text-[1.3rem] tracking-wide max-w-[90%] leading-[1.7rem]'>
+          {title}
+        </p>
+        <p className='text-gray-600 dark:text-gray-400 !font-light text-sm ms:text-base mt-1 max-w-[95%]'>
+          {subTitle}
+        </p>
         {/* tags */}
-        <div className='w-full flex-wrap mt-5 ms:mt-2 flex items-center justify-center  z-10 bg-slate-600 dark:bg-slate-800 text-gray-50 dark:text-gray-400 py-2 pb-5 ms:pb-4 px-3 ms:px-0 pl-0 rounded my-8 ms:my-0 shadow-sm '>
+        <div className='w-full flex-wrap mt-4 ms:mt-2 gap-3 flex items-center justify-center z-10 bg-slate-600 dark:bg-slate-800/95 text-gray-50 dark:text-gray-400/90 py-4 ms:py-3 px-2 ms:px-0 pl-0 rounded-md ms:my-0 shadow-sm '>
           {tags.map((tag, i) => (
             <span
               key={tag + i}
-              className='ml-3 ms:ml-2 border-2 shadow-lg border-slate-200 dark:border-slate-600 border-opacity-70  mt-4 ms:mt-2 py-1 px-3 ms:px-2 rounded-full text-xs'
+              className='border shadow-lg border-slate-200 dark:border-slate-700/90 border-opacity-70 py-1 px-3 ms:px-2 rounded-full text-[11px]'
             >
               {tag}
             </span>
           ))}
         </div>
         {/* tech */}
-        <div className='w-full flex items-center justify-center dark:text-gray-400  flex-wrap -mt-4 ms:mt-2 mb-4 ms:mb-2 -ml-3 ms:-ml-0'>
+        <div className='w-full flex items-center justify-center gap-x-2.5 gap-y-1 text-slate-600 dark:text-gray-400/70 flex-wrap mt-4 ms:mt-2 mb-4 ms:mb-2 max-w-[92%]'>
           {tech.map((tech, i) => (
-            <span key={tech + i} className='ml-3 mt-0 rounded-full font-medium dark:font-semibold text-sm'>
+            <span key={tech + i} className='font-medium text-xs'>
+              {i !== 0 && '• \u2009'}
               {tech}
             </span>
           ))}
         </div>
-        <div className='flex w-14 ms:w-16 ms:self-center item-center justify-between text-lg  ms:text-xl text-slate-600 dark:text-gray-400'>
+        <div className='flex gap-x-4 w-fit ms:self-center item-center justify-between text-slate-600 dark:text-gray-400'>
           {github && (
             <a
               href={github}
               target='_blank'
               rel='noreferrer'
-              className='group text-xl ms:text-2xl cursor-pointer mr-3 hover:text-slate-900 dark:hover:text-gray-400'
+              className='group ms:text-xl cursor-pointer hover:text-slate-900 dark:hover:text-gray-400'
             >
               <FaGithub className='group-hover:scale-110 transition-all duration-300 ' />
             </a>
@@ -95,7 +100,7 @@ const FeaturedProjectCard: React.FC<Props> = ({
               href={chrome}
               target='_blank'
               rel='noreferrer'
-              className='group text-xl ms:text-2xl cursor-pointer mr-3 hover:text-slate-900 dark:hover:text-gray-400'
+              className='group ms:text-2xl cursor-pointer hover:text-slate-900 dark:hover:text-gray-400'
             >
               <FaChrome className='group-hover:scale-110 transition-all duration-300 ' />
             </a>
@@ -105,7 +110,7 @@ const FeaturedProjectCard: React.FC<Props> = ({
             href={link}
             target='_blank'
             rel='noreferrer'
-            className='group cursor-pointer mr-1 hover:text-slate-900 dark:hover:text-gray-400 ms:mt-px'
+            className='group cursor-pointer hover:text-slate-900 dark:hover:text-gray-400 ms:mt-px'
           >
             <FaExternalLinkAlt className='group-hover:scale-110 transition-all duration-300' />
           </a>

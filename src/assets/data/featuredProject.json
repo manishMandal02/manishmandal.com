@@ -1,58 +1,20 @@
 [
   {
+    "image": "/tabsflow-banner.webp",
+    "title": "TabsFlow: Transform your browser experience",
+    "subTitle": "Manage tabs like a pro with vertical tabs, powerful command palette, smart notes, and productivity features that adapt to your workflow.",
+    "tags": ["Chrome extension", "SaaS", "Productivity app", "Notes app"],
+    "tech": ["Typescript", "React", "TailwindCSS", "Golang", "AWS Serverless", "Lambda", "DynamoDB"],
+    "link": "https://tabsflow.com/?ref=manishmandal.com"
+  },
+  {
     "image": "/fresh-inbox-banner.jpg",
     "title": "FreshInbox: Chrome extension",
     "subTitle": "Chrome extension for a clutter-free Gmail experience",
     "tags": ["Gmail Cleaner", "Bulk Delete", "Advance Search", "Total Privacy", "Live on Chrome Store"],
-    "tech": ["Typescript", "NextJs", "TailwindCSS", "NodeJs", "Google APIs"],
-    "link": "https://www.freshinbox.xyz",
+    "tech": ["Typescript", "React", "TailwindCSS", "Extension APIs", "Google APIs"],
+    "link": "https://www.freshinbox.xyz/?ref=manishmandal.com",
     "github": "https://github.com/manishMandal02/fresh-inbox-extension",
     "chrome": "https://chromewebstore.google.com/detail/efelphicclfejkcklpafkoginmhabfkl"
-  },
-  {
-    "image": "/create-index-banner.jpg",
-    "title": "Generate Index File: VS Code",
-    "subTitle": "Create index export file for .js/ts or .jsx/tsx files",
-    "tags": ["VS code extension", "Dev Tool", "Mini Project", "Live on VS code Marketplace"],
-    "tech": ["Typescript", "VS code APIs"],
-    "link": "https://marketplace.visualstudio.com/items?itemName=manishMandal.generate-index-file",
-    "github": "https://github.com/manishMandal02/create-index-vscode-extension",
-    "vscode": "https://marketplace.visualstudio.com/items?itemName=manishMandal.generate-index-file"
-  },
-  {
-    "image": "/editor-banner.jpg",
-    "title": "Graphic Design Tool (paused)",
-    "subTitle": "This app will help create beautiful designs",
-    "link": "https://m-editor.vercel.app/app",
-    "tags": ["Graphic Design Tool", "Image Editor", "Ads Creator", "Meme Maker", "Development Paused"],
-    "tech": ["Typescript", "NextJs", "Zustand", "TailwindCSS", "NodeJs"],
-    "github": "https://github.com/manishMandal02/visual-editor"
-  },
-  {
-    "image": "/bitcoin-game-banner.jpg",
-    "title": "Guess Bitcoin Price",
-    "subTitle": "Guess if Bitcoin price will go Higher or Lower in 1min",
-    "link": "https://bitcoin-game.vercel.app",
-    "tags": ["Live Custom Charts", "Game", "Emoji Reaction", "Web Scrapping"],
-    "tech": ["NextJs", "Zustand", "TailwindCSS", "NodeJs", "Express"],
-    "github": "https://github.com/manishMandal02/bitcoin-guess-game-frontend"
-  },
-  {
-    "image": "/growmart-banner.webp",
-    "title": "GrowMart",
-    "subTitle": "FullStack e-commerce webapp with react",
-    "github": "https://github.com/manishMandal02/growmart-frontend",
-    "link": "https://growmart.netlify.app/",
-    "tags": [
-      "ReactJs",
-      "E-commerce",
-      "scss",
-      "Fullstack",
-      "RestAPI",
-      "Authentication",
-      "MobileFirst",
-      "PaymentGateway"
-    ],
-    "tech": ["React", "Redux", "SCSS", "MUI", "NodeJs", "Express", "MongoDB"]
   }
 ]

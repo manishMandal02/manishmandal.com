@@ -19,21 +19,21 @@ const MyProjects = () => {
           <SectionHeader header='Projects' />
           <SectionSubHeader title="Some Things I've Built" />
         </div>
-        <div className=' -mt-8 ms:-mt-4 flex flex-col w-full items-center justify-center'>
+        <div className='-mt-2 ms:-mt-4 flex flex-col w-full items-center justify-center'>
           {featuredProjectsData.map((data, i) => (
             <div key={nanoid()}>
-              <FeaturedProjectCard isFlipped={i % 2 !== 0} {...data} />
+              <FeaturedProjectCard isFlipped={i % 2 === 0} {...data} />
             </div>
           ))}
-          <div className='mt-16 ms:mt-10 w-full flex flex-col items-center justify-center'>
+          <div className='mt-20 ms:mt-10 w-full flex flex-col items-center justify-center'>
             <div className='relative'>
               <p
-                className='text-xl font-medium text-slate-600 dark:text-gray-300 mb-4 ms:mb-2'
+                className='text-xl text-slate-600 dark:text-gray-300/90 mb-6 ms:mb-2'
                 data-aos='zoom-in-up'
                 data-aos-duration='500'
                 data-aos-mirror='true'
               >
-                Other Projects 👇
+                Other Projects
               </p>
             </div>
             {/*  */}

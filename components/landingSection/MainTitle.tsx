@@ -32,7 +32,7 @@ const MainTitle: React.FC<Props> = ({ controls }) => {
         &nbsp; Hello, I am Manish Mandal
       </motion.p>
       <motion.h1
-        className='text-7xl ms:text-5xl  font-extrabold text-slate-600 dark:text-slate-300 leading- tracking-wide'
+        className='text-7xl ms:text-5xl font-extrabold text-slate-700 dark:text-slate-200 leading- tracking-wide'
         variants={introTitleVariant}
         initial='initial'
         animate='animate'

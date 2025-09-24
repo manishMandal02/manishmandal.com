@@ -1,17 +1,47 @@
 [
   {
-    "title": "Kodai Interiors",
-    "desc": "Landing page for Interior design firm *Fully responsive design,  *Server side rendering for better SEO.",
-    "github": "https://github.com/manishMandal02/kodai-interiors-static",
-    "link": "http://kodaiinteriors.com",
-    "tech": ["NextJs", "TailwindCSS", "Responsive", "SEO"]
+    "title": "Generate Index File: VS Code",
+    "desc": "Create index export file for .js/ts or .jsx/tsx files",
+    "tech": ["Typescript", "VS code APIs"],
+    "link": "https://marketplace.visualstudio.com/items?itemName=manishMandal.generate-index-file",
+    "github": "https://github.com/manishMandal02/create-index-vscode-extension",
+    "vscode": "https://marketplace.visualstudio.com/items?itemName=manishMandal.generate-index-file"
   },
+  {
+    "title": "Graphic Design Tool (paused)",
+    "desc": "This app will help create beautiful designs",
+    "link": "https://m-editor.vercel.app/app",
+    "tech": ["Typescript", "NextJs", "Zustand", "TailwindCSS", "NodeJs"],
+    "github": "https://github.com/manishMandal02/visual-editor"
+  },
+  {
+    "title": "Guess Bitcoin Price",
+    "desc": "Guess if Bitcoin price will go Higher or Lower in 1min",
+    "link": "https://bitcoin-game.vercel.app",
+    "tech": ["NextJs", "Zustand", "TailwindCSS", "NodeJs", "Express"],
+    "github": "https://github.com/manishMandal02/bitcoin-guess-game-frontend"
+  },
+  {
+    "title": "GrowMart",
+    "desc": "FullStack e-commerce webapp with react",
+    "github": "https://github.com/manishMandal02/growmart-frontend",
+    "link": "https://growmart.netlify.app/",
+    "tech": ["React", "Redux", "SCSS", "MUI", "NodeJs", "Express", "MongoDB"]
+  },
+
   {
     "title": "TODO with Voice Assistant",
     "desc": "TODO list with 🎙️ Voice control, speech recognition using Web Speech API",
     "github": "https://github.com/manishMandal02/to-do-with-voice-assistant",
     "link": "https://todo-voice.netlify.app/",
     "tech": ["ReactJs", "SCSS", "NodeJs", "Voice Control"]
+  },
+  {
+    "title": "Kodai Interiors",
+    "desc": "Landing page for Interior design firm.",
+    "github": "https://github.com/manishMandal02/kodai-interiors-static",
+    "link": "http://kodaiinteriors.com",
+    "tech": ["NextJs", "TailwindCSS", "Responsive", "SEO"]
   },
   {
     "title": "Smart Dustbin (IoT)",

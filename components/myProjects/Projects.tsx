@@ -12,9 +12,9 @@ const Projects = () => {
   const Arrow = isViewMore ? FaChevronUp : FaChevronDown;
   return (
     <>
-      <div className='flex flex-wrap  items-center justify-center -ml-4 w-2/3 ms:w-4/5'>
+      <div className='flex flex-wrap gap-x-6 gap-y-6 items-center justify-center -ml-4 w-[80%] ms:w-4/5'>
         {allProjectsData.map((data, i) => {
-          if (!isViewMore ? i <= 1 : i <= 5) {
+          if (!isViewMore ? i <= 2 : i <= 6) {
             return (
               <div key={nanoid()}>
                 <ProjectCard {...data} />
@@ -37,7 +37,7 @@ const Projects = () => {
       {allProjectsData.length > 3 && (
         <button
           onClick={() => {
-            setIsViewMore((prev) => !prev);
+            setIsViewMore(prev => !prev);
           }}
           className='group mt-4 flex items-center text-lg text-slate-900 dark:text-gray-400 font-medium'
         >

@@ -1,6 +1,7 @@
 import { motion, useAnimation } from 'framer-motion';
 import Image from 'next/image';
-import { BiLinkExternal } from 'react-icons/bi';
+import { MdInsertDriveFile } from 'react-icons/md';
+
 import { emailContainerVariant } from '../../src/animations/landingSection';
 
 import { planeVariants } from '../../src/animations/landingSection';
@@ -50,11 +51,12 @@ const HeroSection = () => {
         >
           <MyEmail />
           <Link
-            href={'/manish-resume.pdf'}
+            href={'/resume'}
             target='_black'
-            className='flex items-center justify-center text-slate-300 border-2 border-opacity-80 border-slate-200 px-4 h-12 rounded-md mt-[4.2rem] ml-6 '
+            className='flex items-center justify-center text-slate-700/90 dark:text-slate-200/90 border-2 border-slate-500/90 dark:border-slate-200 px-4 h-12 rounded-md mt-[4.2rem] ml-6 group'
           >
-            My Resume <BiLinkExternal className='ml-2' />
+            <MdInsertDriveFile className='mr-1.5 text-slate-gray-500 dark:text-gray-300' />
+            My Resume
           </Link>
         </motion.div>
         {/* Scroll Down */}
