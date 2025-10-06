@@ -2,9 +2,8 @@ import { motion, useAnimation } from 'framer-motion';
 import Image from 'next/image';
 import { MdInsertDriveFile, MdVideocam } from 'react-icons/md';
 
-import { emailContainerVariant } from '../../src/animations/landingSection';
+import { emailContainerVariant, planeVariants } from '../../src/animations/landingSection';
 
-import { planeVariants } from '../../src/animations/landingSection';
 import MainTitle from './MainTitle';
 import MyEmail from './MyEmail';
 import ScrollDown from './ScrollDown';

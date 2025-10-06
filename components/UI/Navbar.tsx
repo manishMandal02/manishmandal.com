@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import React, { useCallback } from 'react';
+import React, { FC, useCallback, useEffect, useRef, useState } from 'react';
 import scrollTo from '../../src/utils/scrollTo';
 import SocialLinks from './SocialLinks';
 import ThemeToggleSwitch from './ThemeToggleSwitch';
-import { wait } from '../../src/utils/wait';
+import { MdKeyboardArrowDown, MdInsertDriveFile, MdVideocam, MdCalendarMonth } from 'react-icons/md';
 
 // import logo from '/m-logo.svg';
 
@@ -16,7 +16,7 @@ const Navbar = () => {
       router.push('/', null, { scroll: true });
       setTimeout(() => {
         scrollTo(section);
-      }, 2200);
+      }, 1600);
       return;
     }
     scrollTo(section);
@@ -34,10 +34,10 @@ const Navbar = () => {
     gotTo('contact');
   }, [gotTo]);
 
-  const blogLink = 'https://blog.manishmandal.com';
+  // const blogLink = 'https://blog.manishmandal.com';
 
   return (
-    <nav className='h-20 ms:h-28 overflow-hidden ms:px-0 ms:pt-0   px-24 py-8 pt-10 absolute top-0 w-full z-10 bg-white dark:bg-primaryDarkBG transition-all duration-400'>
+    <nav className='h-20 ms:h-28 ms:px-0 ms:pt-0   px-24 py-8 pt-10 absolute top-0 w-full z-10 bg-white dark:bg-primaryDarkBG transition-all duration-400'>
       <div className='ms:hidden h-full flex items-center justify-around relative'>
         <Image
           src={'/m-logo.svg'}
@@ -47,19 +47,19 @@ const Navbar = () => {
           alt='manish-mandal'
           priority
         />
-        <div className='flex items-center justify-center overflow-hidden text-slate-600  dark:text-gray-300'>
-          <p
+        <div className='flex items-center justify-center  text-slate-600  dark:text-gray-300'>
+          <button
             onClick={goToAboutMe}
             className='text-lg  hover:text-black dark:hover:text-slate-100  cursor-pointer'
           >
             AboutMe
-          </p>
-          <p
+          </button>
+          <button
             onClick={goToProjects}
             className=' cursor-pointer ml-5 text-lg hover:text-black  dark:hover:text-slate-100 '
           >
             Projects
-          </p>
+          </button>
           {/* <a
             href={blogLink}
             target='_blank'
@@ -67,12 +67,14 @@ const Navbar = () => {
           >
             Blog
           </a> */}
-          <p
+          <button
             onClick={goToContact}
             className=' cursor-pointer ml-5 text-lg hover:text-black dark:hover:text-slate-100  '
           >
             Contact
-          </p>
+          </button>
+
+          <NavMoreButton />
         </div>
         <div className='w-24 mr-'>
           <SocialLinks github />
@@ -91,19 +93,18 @@ const Navbar = () => {
             <ThemeToggleSwitch />
           </div>
         </div>
-        <div className='w-full flex items-center justify-center overflow-hidden text-slate-600 dark:text-white   -mb-2 mt-2'>
-          <p onClick={goToAboutMe} className='text-lg   cursor-pointer'>
+        <div className='w-full flex items-center justify-center  text-slate-600 dark:text-white  -mb-2 mt-2'>
+          <button onClick={goToAboutMe} className='text-lg   cursor-pointer'>
             AboutMe
-          </p>
-          <p onClick={goToProjects} className=' cursor-pointer ml-4 text-lg '>
+          </button>
+          <button onClick={goToProjects} className=' cursor-pointer ml-4 text-lg'>
             Projects
-          </p>
-          <a href={blogLink} target='_blank' className='appearance-none cursor-pointer ml-4 text-lg '>
-            Blog
-          </a>
-          <p onClick={goToContact} className=' cursor-pointer ml-4 text-lg hover:text-black    '>
+          </button>
+          <button onClick={goToContact} className=' cursor-pointer ml-4 text-lg hover:text-black'>
             Contact
-          </p>
+          </button>
+
+          <NavMoreButton />
         </div>
       </div>
     </nav>
@@ -111,3 +112,71 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+// More options button
+
+const NavMoreButton: FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const popoverRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+
+  // Close popover when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (isOpen && popoverRef.current && !popoverRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen]);
+
+  const menuItems = [
+    { label: 'Resume', icon: MdInsertDriveFile, href: '/resume' },
+    { label: 'Intro Video', icon: MdVideocam, href: '/intro-video' },
+    { label: 'Book a call', icon: MdCalendarMonth, href: '/book-call' }
+  ];
+
+  const handleItemClick = useCallback(() => setIsOpen(false), []);
+
+  return (
+    <div className='relative ml-3.5'>
+      <button
+        ref={buttonRef}
+        onClick={() => setIsOpen(!isOpen)}
+        className='flex items-center space-x-1 text-lg text-gray-600 dark:text-slate-300 hover:text-gray-900 hover:dark:text-gray-100/90 transition focus:outline-none'
+      >
+        <span>More</span>
+        <MdKeyboardArrowDown
+          className={`w-4 h-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+        />
+      </button>
+
+      {/* Popover Menu */}
+      {isOpen && (
+        <div
+          ref={popoverRef}
+          className='absolute right-0 mt-2 w-48 z-[999] bg-white dark:bg-gray-950 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700/60 py-2'
+        >
+          {menuItems.map(item => (
+            <a
+              href={item.href}
+              onClick={handleItemClick}
+              key={item.label}
+              className='w-full flex items-center space-x-3 px-4 py-2.5 text-gray-700 dark:text-slate-200/90 hover:bg-gray-100/90 hover:dark:bg-gray-900 transition text-left'
+            >
+              <item.icon className='w-4 h-4 text-gray-500 dark:text-gray-400' />
+              <span className='text-sm'>{item.label}</span>
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};

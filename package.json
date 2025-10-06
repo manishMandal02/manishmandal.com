@@ -6,6 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@calcom/embed-react": "^1.5.3",
     "aos": "^2.3.4",
     "framer-motion": "^5.5.8",
     "nanoid": "^3.2.0",
