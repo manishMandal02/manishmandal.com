@@ -15,7 +15,7 @@ const Resume = () => {
         <iframe
           title='google-doc-resume'
           sandbox='allow-same-origin allow-scripts allow-popups allow-forms'
-          className='size-full'
+          className='w-full h-full'
           src={EmbedUrl}
         ></iframe>
       </section>
