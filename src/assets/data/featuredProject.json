@@ -13,7 +13,7 @@
     "subTitle": "Chrome extension for a clutter-free Gmail experience",
     "tags": ["Gmail Cleaner", "Bulk Delete", "Advance Search", "Total Privacy", "Live on Chrome Store"],
     "tech": ["Typescript", "React", "TailwindCSS", "Extension APIs", "Google APIs"],
-    "link": "https://www.freshinbox.xyz/?ref=manishmandal.com",
+    "link": "https://freshinbox.manishmandal.com",
     "github": "https://github.com/manishMandal02/fresh-inbox-extension",
     "chrome": "https://chromewebstore.google.com/detail/efelphicclfejkcklpafkoginmhabfkl"
   }
