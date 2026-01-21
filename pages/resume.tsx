@@ -1,17 +1,16 @@
 import React from 'react';
 import Navbar from '../components/UI/Navbar';
 
-// doc id for resume document
-const GoogleDocId = '2PACX-1vTrt7trkFwlwbSoubrsiTrNMvJgODdcqC8wShlzARgogEOCMDKWcCHnhovrdAnYcdFjM7R2aam8hUsK';
-const EmbedUrl = `https://docs.google.com/document/d/e/${GoogleDocId}/pub?embedded=true`;
+// goggle document url
 const DownloadUrl =
   'https://docs.google.com/document/d/1I51kge3Aze5XcKO0jwGpwdUZQPOShK3tnoVRK_xxCZ8/export?format=pdf';
+const EmbedUrl = `https://docs.google.com/viewer?url=${encodeURIComponent(DownloadUrl)}&embedded=true`;
 
 //
 
 const Resume = () => {
   return (
-    <main className='w-screen h-screen pt-12 overflow-hidden bg-slate-200 dark:bg-primaryDarkBG'>
+    <main className='w-screen h-screen pt-20 overflow-hidden bg-slate-200 dark:bg-primaryDarkBG'>
       <Navbar />
       <section className='!w-fit min-w-[830px] ms:min-w-full !h-full mx-auto flex items-center ms:hidden'>
         <iframe
