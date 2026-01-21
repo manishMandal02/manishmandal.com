@@ -2,14 +2,16 @@ import React from 'react';
 import Navbar from '../components/UI/Navbar';
 
 // doc id for resume document
-const GoogleDocId = '2PACX-1vT_74nD2pS-L7LpbBmi1MmkIPxpP1L4bBS7w_8tcw73fe3uap4LA2RAcC65KzaCmNIrvS5iMk7YtGDf';
+const GoogleDocId = '2PACX-1vTrt7trkFwlwbSoubrsiTrNMvJgODdcqC8wShlzARgogEOCMDKWcCHnhovrdAnYcdFjM7R2aam8hUsK';
 const EmbedUrl = `https://docs.google.com/document/d/e/${GoogleDocId}/pub?embedded=true`;
 const DownloadUrl =
-  'https://docs.google.com/document/d/1gMKly6j05T0D2seFMFGHYD0IpCm04QrJofeJ01pAbs4/export?format=pdf';
+  'https://docs.google.com/document/d/1I51kge3Aze5XcKO0jwGpwdUZQPOShK3tnoVRK_xxCZ8/export?format=pdf';
+
+//
 
 const Resume = () => {
   return (
-    <main className='w-screen h-screen pt-10 overflow-hidden bg-slate-200 dark:bg-primaryDarkBG'>
+    <main className='w-screen h-screen pt-12 overflow-hidden bg-slate-200 dark:bg-primaryDarkBG'>
       <Navbar />
       <section className='!w-fit min-w-[830px] ms:min-w-full !h-full mx-auto flex items-center ms:hidden'>
         <iframe

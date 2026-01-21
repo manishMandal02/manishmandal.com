@@ -5,6 +5,7 @@ import scrollTo from '../../src/utils/scrollTo';
 import SocialLinks from './SocialLinks';
 import ThemeToggleSwitch from './ThemeToggleSwitch';
 import { MdKeyboardArrowDown, MdInsertDriveFile, MdVideocam, MdCalendarMonth } from 'react-icons/md';
+import Link from 'next/link';
 
 // import logo from '/m-logo.svg';
 
@@ -39,14 +40,16 @@ const Navbar = () => {
   return (
     <nav className='h-20 ms:h-28 ms:px-0 ms:pt-0   px-24 py-8 pt-10 absolute top-0 w-full z-10 bg-white dark:bg-primaryDarkBG transition-all duration-400'>
       <div className='ms:hidden h-full flex items-center justify-around relative'>
-        <Image
-          src={'/m-logo.svg'}
-          className='cursor-pointer'
-          width={50}
-          height={50}
-          alt='manish-mandal'
-          priority
-        />
+        <Link href={'/'}>
+          <Image
+            src={'/m-logo.svg'}
+            className='cursor-pointer'
+            width={50}
+            height={50}
+            alt='manish-mandal'
+            priority
+          />
+        </Link>
         <div className='flex items-center justify-center  text-slate-600  dark:text-gray-300'>
           <button
             onClick={goToAboutMe}
@@ -85,7 +88,15 @@ const Navbar = () => {
       </div>
       <div className='hidden ms:flex h-full flex-col'>
         <div className='flex h-full justify-between items-center shadow-sm w-full px-4 relative'>
-          <Image src={'/m-logo.svg'} className='cursor-pointer' width={45} height={45} alt='manish-mandal' />
+          <Link href={'/'}>
+            <Image
+              src={'/m-logo.svg'}
+              className='cursor-pointer'
+              width={45}
+              height={45}
+              alt='manish-mandal'
+            />
+          </Link>
           <div className=' -mr-20'>
             <SocialLinks github />
           </div>
